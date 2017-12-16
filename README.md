@@ -7,6 +7,8 @@ This software convert the temperature you enter in C° Celcius to F° Farenheit 
 
 
 ![Screenshot](screenshot.png)  
+ 
+![Screenshot](screenshot1.png) 
 
 
 
