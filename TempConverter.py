@@ -6,6 +6,7 @@
 from __future__ import annotations
 import argparse
 import math
+from pathlib import Path
 import tkinter as tk
 
 
@@ -25,7 +26,6 @@ class ConverterApp(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
         self.title("Temperature Converter · Hamdy Abou El Anein")
-        self.geometry("450x360")
         self.minsize(380, 310)
         self.configure(bg="#101827")
         self.value = tk.StringVar()
@@ -35,6 +35,10 @@ class ConverterApp(tk.Tk):
         box.pack(expand=True, fill="both")
         tk.Label(box, text="TEMPERATURE CONVERTER", bg="#101827", fg="#8bd6c1",
                  font=("DejaVu Sans", 13, "bold")).pack(pady=12)
+        artwork = tk.PhotoImage(file=str(Path(__file__).resolve().parent / "images/term-ui.png"))
+        illustration = tk.Label(box, image=artwork)
+        illustration.image = artwork
+        illustration.pack()
         tk.OptionMenu(box, self.direction, "Celsius → Fahrenheit",
                       "Fahrenheit → Celsius").pack(pady=10)
         tk.Entry(box, textvariable=self.value, justify="center",
